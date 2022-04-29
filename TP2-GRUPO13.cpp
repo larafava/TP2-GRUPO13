@@ -2,15 +2,18 @@
 //
 
 #include <iostream>
+#include "Aeropuerto.h"
 
 
 using namespace std;
 
 int main()
 {
-    auto t = std::time(nullptr);
-    auto tm = *std::localtime(&t);
-    std::cout << std::put_time(&tm, "%d-%m-%Y %H-%M-%S") << std::end
+	
+	Aeropuerto::setCont(0);
+	int aux = Aeropuerto::getCont();
+	cout << "hola mundo";
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar

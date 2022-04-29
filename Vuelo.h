@@ -1,18 +1,23 @@
 #pragma once
 #include <string>
+#include "Avion.h"
+#include "cFecha.h"
+#include "cListaPasajeros.h"
 
 using namespace std;
 
 class Vuelo {
+
 	unsigned int numvuelo;
 	string estado;
-	string avion;
+	Avion* avion;
+	cListaPasajeros* Pasajeros;
 
 	//Formato HH:MM
-	string HorarioAterrizaje;
+	//cFecha* HorarioAterrizaje;
 
 	//Formato HH:MM
-	string HorarioArribo;
+	//cFecha* HorarioArribo;
 
 
 public:
@@ -26,7 +31,8 @@ public:
 #pragma region Metodos
 	string to_string();
 	void ArribarPista(int HoraBajada, int MinutoBajada);
-	void AgregarPasajero();
+	void AgregarPasajero(Pasajero*c);
 	void CambiarPasajero();
-	void EliminarPasajero();
+	void EliminarPasajero(Pasajero*c);
+	int getPesoPasajero();
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
  
 using namespace std;
 
@@ -14,3 +15,4 @@ enum class eDestinos {
 	Rusia,
 	Chile
 };
+string destinostring(eDestinos destinos);

@@ -1,22 +1,25 @@
 #pragma once
+#include "Vuelo.h"
 #include <string>
 
 using namespace std;
 
 class Avion {
+	Vuelo* Vuelo;
 	unsigned int ID;
 	int cantmaxpasajeros;
 	int cantactualpasajeros;
 	unsigned int pesomaxtotal;
 
 
-#pragma region Constructores y destructores
+
+public:
 	Avion(unsigned int _ID, int _cantmaxpasajeros, int _cantactualpasajeros, unsigned int _pesomaxtotal);
 	~Avion();
-#pragma endregion
 
-#pragma region Metodos
-	void ChequearCargaMaxima();
+
+
+	bool ChequearCargaMaxima();
 	string to_string();
 
 };

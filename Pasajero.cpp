@@ -5,12 +5,12 @@
 using namespace std;
 
 
-Pasajero::Pasajero(string _DNI, string _nombre, tm _fecha, string _listavalijas, float _pesovalijas)
+Pasajero::Pasajero(int _DNI, string _nombre, string _listavalijas, float _pesovalijas)
 {
 
 	this->DNI = _DNI;
 	this->nombre = _nombre;
-	this->fecha = _fecha;
+	this->fecha = NULL;
 	this->numerovuelo = -1;
 	//this->asientos = _asientos;
 	this->listavalijas = _listavalijas;
@@ -19,5 +19,17 @@ Pasajero::Pasajero(string _DNI, string _nombre, tm _fecha, string _listavalijas,
 
 }
 string Pasajero::to_string() {
-	return this->DNI + " " + this->nombre + " " + std::to_string(this->fecha)+""+ this->fecha + " " + std::to_string(this->numerovuelo) + " " + this->asientos + " " + this->listavalijas + " " + std::to_string(this->pesovalijas) + " ";
+	return std::to_string(this->DNI) + " " + this->nombre + " " + std::to_string(this->fecha)+""+ this->fecha + " " + std::to_string(this->numerovuelo) + " " + this->asientos + " " + this->listavalijas + " " + std::to_string(this->pesovalijas) + " ";
+}
+
+int Pasajero::getDNI() {
+	return this->DNI;
+
+}
+void Pasajero::ImprimirPasajero() {
+ cout << this->to_string();
+}
+
+int Pasajero::getPesoValija() {
+	return this->pesovalijas;
 }
