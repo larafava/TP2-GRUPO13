@@ -5,7 +5,6 @@
 using namespace std;
 
 class cValija {
-	friend class cListaValijas;
 private:
 	float _peso;
 	int _codigo;

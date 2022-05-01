@@ -19,6 +19,7 @@ public:
     ~cFecha();
     string to_string();
     void imprimiFecha();
+    bool mismoDia(int dia);
 
 };
 

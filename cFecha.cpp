@@ -20,3 +20,7 @@ string cFecha::to_string() {
 void cFecha::imprimiFecha() {
     cout << this->to_string() + "\n";
 }
+
+bool cFecha::mismoDia(int dia){
+    return (this->_dia == dia);
+}

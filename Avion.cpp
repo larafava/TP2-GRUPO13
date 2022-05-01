@@ -1,21 +1,21 @@
-#include "Avion.h"
+#include "cAvion.h"
 #include <string>
-
 using namespace std;
 
-Avion::Avion(unsigned int _ID, int _cantmaxpasajeros, int _cantactualpasajeros, unsigned int _pesomaxtotal) {
+cAvion::cAvion(int _ID, int _cantmaxpasajeros, int _cantactualpasajeros, int _pesomaxtotal) {
 	this->ID = _ID;
 	this->cantmaxpasajeros = _cantmaxpasajeros;
 	this->cantactualpasajeros = _cantactualpasajeros;
 	this->pesomaxtotal = _pesomaxtotal;
-	this->Vuelo = NULL;
+	//this->Vuelo = NULL;
 }
-string Avion::to_string() {
+string cAvion::to_string() {
 	return std::to_string(this->ID) + "" + std::to_string(this->cantmaxpasajeros) + " " + std::to_string(this->cantactualpasajeros) + " " + std::to_string(this->pesomaxtotal) + "";
 }
 
-bool Avion::ChequearCargaMaxima() {
+bool cAvion::ChequearCargaMaxima() {
 	bool toR = false;
+	
 	if (this->Vuelo != NULL) {
 
 		int aux = this->Vuelo->getPesoPasajero() + (75 * 4);
@@ -24,4 +24,12 @@ bool Avion::ChequearCargaMaxima() {
 			throw"Error, el peso total es mayor que la capacidad maxima";
 	}
 	return toR;
+}
+
+int cAvion::getID() {
+	return this->ID;
+}
+
+Vuelo* cAvion::getVuelo() {
+	return this->Vuelo;
 }

@@ -49,7 +49,7 @@ cValija* cListaValija::buscar(int id) {
             found = true;
         }
     }
-
+    return toR;
 }
 
 bool cListaValija::eliminar(int posicion) {
@@ -87,4 +87,24 @@ cValija* cListaValija::Quitar(int posicion) {
     }
     return toR;
 
+}
+
+int cListaValija::getPos(cValija* v){
+    bool found = false;
+    int i = 0;
+    while (!found && i < this->ocupados) {
+        if (this->Lista[i]->getCodigo() == v->getCodigo()) {
+            found = true;
+        }
+    }
+    if (found == true)
+        return i;
+    else
+        return -1;
+    
+
+}
+//sobrecarga el operador [] en la lista de valijas
+cValija* cListaValija::operator[](int pos){
+    return this->Lista[pos];
 }

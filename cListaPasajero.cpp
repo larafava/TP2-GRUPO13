@@ -1,5 +1,4 @@
 #include "cListaPasajeros.h"
-#include"Pasajero.h"
 using namespace std;
 
 cListaPasajeros::cListaPasajeros(int l) {
@@ -45,7 +44,7 @@ Pasajero* cListaPasajeros::buscar(int dni) {
             found = true;
         }
     }
-
+    return toR;
 }
 
 bool cListaPasajeros::eliminar(int posicion) {

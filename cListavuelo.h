@@ -1,20 +1,17 @@
 #pragma once
-#include "Vuelo.h"
+#include "vuelo.h"
 
 using namespace std;
 class cListavuelo {
 	Vuelo** Lista;
-	unsigned int ocupado;
-	unsigned int capacidad;
-	unsigned int max_capacidad;
+	int ocupado;
+	int capacidad;
+	int max_capacidad;
 
 public:
-#pragma region Constructores y Destructores
 	cListavuelo(int l);
 	~cListavuelo();
-#pragma endregion
 
-#pragma region Metodos
 	bool Agregar(Vuelo* d);
 	Vuelo* buscar(int id);
 	Vuelo* Quitar(int posicion);

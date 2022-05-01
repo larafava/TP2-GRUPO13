@@ -1,20 +1,63 @@
-// TP2-GRUPO13.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
 
 #include <iostream>
-#include "Aeropuerto.h"
-
+#include "cFecha.h"
+#include "Pasajero.h"
+#include "cListavalija.h"
+#include "cValija.h"
+#include "cAvion.h"
+#include "vuelo.h"
+#include "cListaPasajeros.h"
 
 using namespace std;
+//sobrecarga del operador de impresion imprimo un vuelo
+ostream& operator<<(ostream& os, Vuelo * v)
+{
+    os << "[";
+    os << v->to_string();
+    os << "]\n";
+    return os;
+}
+
+//sobrecarga del operador suma
+
+void operator + (Pasajero  &p,cValija  &x){
+	p.AgregarEquipaje(&x);
+	
+}
+
+void operator - (Pasajero  &p,cValija  &x){
+	p.eliminarEquipaje(&x);
+	
+	
+}
 
 int main()
 {
-	
-	Aeropuerto::setCont(0);
-	int aux = Aeropuerto::getCont();
-	cout << "hola mundo";
+	//Creo las valijas para el pasajero
+	cValija * valija1 = new cValija(12,1);
+	cValija * valija2 = new cValija(12,1);
+	//creo el pasajero
+	Pasajero * pasajero1 = new Pasajero(3412332,"Oscar Perez");
+	//agrego las valijas 
+	pasajero1->AgregarEquipaje(valija1);
+	pasajero1->AgregarEquipaje(valija2);
+	//Creo un nuevo avion
+	cAvion * avion = new cAvion(1,100,0,10000);
+
+
+
+	//Creo el vuelo asociado al avion 
+	//Le seteo el avion al vuelo
+
+
+
+	delete valija1;
+	delete valija2;
+	delete pasajero1;
+	delete avion;
 
 }
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración

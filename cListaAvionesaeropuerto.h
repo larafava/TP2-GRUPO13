@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "Avion.h"
+#include "cAvion.h"
 
 using namespace std;
 
 class cListaAvionesAeropuerto {
-	Avion** Lista;
+	cAvion** Lista;
 	unsigned int ocupado;
 	unsigned int capacidad;
     unsigned int max_capacidad;
@@ -18,11 +18,13 @@ public:
 #pragma endregion
 
 #pragma region Metodos
-	bool Agregar(Avion*d);
+	bool Agregar(cAvion*d);
 	bool Haycapacidad();
 	int getOcupados();
-	Avion* Quitar(int posicion);
-	Avion* operator [] (int pos_i);
+	cAvion * obtener(int pos);
+	cAvion* Quitar(int posicion);
+	cAvion* operator [] (int pos_i);
+	int getPosicion(cAvion * c);
 	void listar();
 
 

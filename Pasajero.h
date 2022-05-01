@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include "cFecha.h"
+#include "cListavalija.h"
+#include "cValija.h"
 
 
 class Pasajero {
@@ -9,20 +11,22 @@ class Pasajero {
 	cFecha* fecha;
 	int numerovuelo;
 	string asientos;
-	string listavalijas;
+	cListaValija* listavalijas;
 	float pesovalijas;
 
 public:
-#pragma region Constructores y destructores
-	Pasajero(int _DNI, string _nombre, string _listavalijas, float _pesovalijas);
+	Pasajero(int _DNI, string _nombre);
 	~Pasajero();
 
-#pragma endregion
 
-#pragma region Metodos
 	string to_string();
-	void AgregarEquipaje();
+	void AgregarEquipaje(cValija * valija);
+	void eliminarEquipaje(cValija * valija);
 	int getDNI();
 	void ImprimirPasajero();
 	int getPesoValija();
+	string getAsiento();
+    void setAsiento(string asiento);
+	void setFecha(cFecha* fecha);
+
 };

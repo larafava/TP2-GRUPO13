@@ -5,8 +5,8 @@ using namespace std;
 class cListaPasajeros {
 private:
     Pasajero** Lista;
-    unsigned int ocupados;
-    unsigned int capacidad;
+    int ocupados;
+    int capacidad;
     
 
  
